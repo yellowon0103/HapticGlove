@@ -1,0 +1,16 @@
+매직복셀 최종 코드의 오류
+
+NullReferenceException: Object reference not set to an instance of an object
+ARAVRInput.get_RHand () (at Assets/ARAVRInput/ARAVRInput.cs:118)
+ARAVRInput.get_RHandPosition () (at Assets/ARAVRInput/ARAVRInput.cs:144)
+ARAVRInput.DrawCrosshair (UnityEngine.Transform crosshair, System.Boolean isHand, ARAVRInput+Controller hand) (at Assets/ARAVRInput/ARAVRInput.cs:368)
+VoxelMaker.Update () (at Assets/Scripts/VoxelMaker.cs:38)
+
+-> 하이어라키 창에서 CamerRig의 컨트롤러 레프트 롸이트 띄어쓰기 없앳슴
+
+NullReferenceException: Object reference not set to an instance of an object
+ARAVRInput.get_RHandPosition () (at Assets/ARAVRInput/ARAVRInput.cs:144)
+ARAVRInput.DrawCrosshair (UnityEngine.Transform crosshair, System.Boolean isHand, ARAVRInput+Controller hand) (at Assets/ARAVRInput/ARAVRInput.cs:368)
+VoxelMaker.Update () (at Assets/Scripts/VoxelMaker.cs:38)
+
+-> 118번에 rhand 자리에 lhand 있길래 수정
