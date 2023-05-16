@@ -111,6 +111,67 @@ public class VoxelMaker : MonoBehaviour
                 }
             }
         }
+        //
+        // 선택한 객체를 저장할 변수
+        GameObject selectedObject = null;
+        Vector3 distanceToSelectedObject = Vector3.zero; // 추가: 컨트롤러와 선택한 객체 사이의 거리
+        Rigidbody selectedObjectRigidbody = null; // 추가: 선택된 객체의 Rigidbody 컴포넌트
+
+        // 1) VR 컨트롤러의 트랙패드 버튼을 누르면
+        if (ARAVRInput.Get(ARAVRInput.Button.Two))
+        {
+            // 컨트롤러 Ray 생성
+            Ray ray = new Ray(ARAVRInput.LHandPosition, ARAVRInput.LHandDirection);
+            RaycastHit hitInfo;
+            // 2. 마우스의 위치가 바닥 위에 위치해 있다면
+            if (Physics.Raycast(ray, out hitInfo))
+            {
+                // 충돌한 객체의 Collider 가져오기
+                Collider collider = hitInfo.collider;
+
+                // 바닥 위의 객체에 충돌했을 경우
+                if (collider.CompareTag("FloorObject"))
+                {
+                    // 컨트롤러로 선택한 객체를 움직이기 위해 저장
+                    selectedObject = collider.gameObject;
+
+                    // 추가: 컨트롤러와 선택한 객체 사이의 거리 계산
+                    distanceToSelectedObject = selectedObject.transform.position - ARAVRInput.LHandPosition;
+
+                    // Rigidbody 컴포넌트 가져오기
+                    selectedObjectRigidbody = selectedObject.GetComponent<Rigidbody>();
+
+                    // Rigidbody가 없다면 추가
+                    if (selectedObjectRigidbody == null)
+                    {
+                        selectedObjectRigidbody = selectedObject.AddComponent<Rigidbody>();
+                    }
+
+                    // 물리 영향을 받도록 설정
+                    selectedObjectRigidbody.isKinematic = false;
+
+                }
+            }
+        }
+        // 2) VR 컨트롤러의 발사 버튼을 놓으면
+        if (ARAVRInput.GetUp(ARAVRInput.Button.Two))
+        {
+            // 선택한 객체 해제
+            selectedObject = null;
+        }
+
+        // 선택한 객체가 있을 경우, 컨트롤러의 위치와 방향으로 객체 이동
+        if (selectedObject != null)
+        {
+            // 거리를 유지하면서 객체 이동
+            Vector3 targetPosition = ARAVRInput.LHandPosition + distanceToSelectedObject;
+            selectedObjectRigidbody.MovePosition(targetPosition);
+            selectedObject.transform.rotation = Quaternion.LookRotation(ARAVRInput.LHandDirection);
+        }
+        //
+        //
+
+
     }
 }
 

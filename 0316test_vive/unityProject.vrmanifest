@@ -5,7 +5,7 @@
       "app_key": "application.generated.unity.0316test_vive.exe",
       "launch_type": "url",
       "url": "steam://launch/",
-      "action_manifest_path": "C:\\Users\\gyw1t\\githubRepository_yw\\0316test_vive\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "action_manifest_path": "C:\\Users\\gyw1t\\githubRepository_yw\\HapticGlove\\0316test_vive\\Assets\\StreamingAssets\\SteamVR\\actions.json",
       "strings": {
         "en_us": {
           "name": "0316test_vive [Testing]"
