@@ -388,6 +388,7 @@
 "Assets/HTCViveTrackerProfile.cs"
 "Assets/PunchFolder/CubeCollision.cs"
 "Assets/PunchFolder/PositionRestriction.cs"
+"Assets/PunchFolder/TextUpdate.cs"
 "Assets/Scripts/CamRotate.cs"
 "Assets/Scripts/Voxel.cs"
 "Assets/Scripts/VoxelMaker.cs"
