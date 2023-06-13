@@ -386,6 +386,7 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.XR.LegacyInputHelpers.ref.dll"
 "Assets/ARAVRInput/ARAVRInput.cs"
 "Assets/HTCViveTrackerProfile.cs"
+"Assets/PunchFolder/ControllerUiClick.cs"
 "Assets/PunchFolder/CubeCollision.cs"
 "Assets/PunchFolder/PositionRestriction.cs"
 "Assets/PunchFolder/TextUpdate.cs"
