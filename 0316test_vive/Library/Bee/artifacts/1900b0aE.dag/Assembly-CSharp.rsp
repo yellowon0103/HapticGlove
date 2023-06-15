@@ -390,6 +390,7 @@
 "Assets/ARAVRInput/ARAVRInput.cs"
 "Assets/HTCViveTrackerProfile.cs"
 "Assets/PunchFolder/ArduinoManager.cs"
+"Assets/PunchFolder/Bullet.cs"
 "Assets/PunchFolder/ControllerUiClick.cs"
 "Assets/PunchFolder/CubeCollision.cs"
 "Assets/PunchFolder/PositionRestriction.cs"

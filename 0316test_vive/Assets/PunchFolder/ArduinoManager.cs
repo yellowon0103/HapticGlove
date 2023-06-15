@@ -38,13 +38,13 @@ public class ArduinoManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKey(KeyCode.Alpha1))
         {
             Debug.Log("Send one");
             //아두이노한테 1을 보낸다.
             serial.Write("1");
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetKey(KeyCode.Alpha2))
         {
             Debug.Log("Send two");
             //아두이노한테 2을 보낸다.
