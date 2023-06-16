@@ -17,7 +17,7 @@ public class ControllerUiClick : MonoBehaviour
             Debug.Log("Trigger!");
 
             Ray ray = new Ray(ARAVRInput.LHandPosition, ARAVRInput.LHandDirection);
-            RaycastHit hitInfo;
+            //RaycastHit hitInfo;
 
             // GraphicRaycaster를 사용하여 UI 요소와 충돌 감지
             PointerEventData pointerEventData = new PointerEventData(EventSystem.current);

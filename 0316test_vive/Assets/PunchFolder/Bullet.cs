@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
 
-    public float speed = 8f; // 총알 이동 속력
+    public float speed = 3f; // 총알 이동 속력
     private Rigidbody bulletRigidbody; // 이동에 사용할 리지드바디 컴포넌트
 
     void Start()
@@ -30,5 +30,5 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
+    
 }
