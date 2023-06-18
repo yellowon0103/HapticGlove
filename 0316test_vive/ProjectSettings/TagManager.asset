@@ -8,6 +8,7 @@ TagManager:
   - ViveTracker
   - UI
   - PunchWall
+  - transparentPunchWall
   layers:
   - Default
   - TransparentFX

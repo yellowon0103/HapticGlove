@@ -5,6 +5,8 @@ using System.IO.Ports;
 
 public class ArduinoManager : MonoBehaviour
 {
+    public VelocityTracker velocityScript;
+
     //시리얼 포트
     SerialPort serial;
 
@@ -42,6 +44,8 @@ public class ArduinoManager : MonoBehaviour
         {
             Debug.Log("Send one");
             //아두이노한테 1을 보낸다.
+            //Debug.Log(velocityScript.sendVelocity());
+
             serial.Write("1");
         }
         if (Input.GetKey(KeyCode.Alpha2))
@@ -50,5 +54,14 @@ public class ArduinoManager : MonoBehaviour
             //아두이노한테 2을 보낸다.
             serial.Write("2");
         }
+    }
+
+    public void TriggerWall()
+    {
+        Debug.Log("Velocity PunchWallTrigger");
+        
+        Debug.Log(velocityScript.sendVelocity());
+
+        serial.Write("1");
     }
 }

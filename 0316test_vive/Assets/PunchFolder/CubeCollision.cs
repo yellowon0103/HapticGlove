@@ -7,6 +7,8 @@ public class CubeCollision : MonoBehaviour
     private Color originalColor;
     private Renderer cubeRenderer;
 
+    public ArduinoManager ArduinoManagerScript;
+
     private void Start()
     {
         // 초기 색상 저장
@@ -23,10 +25,16 @@ public class CubeCollision : MonoBehaviour
         // 충돌한 오브젝트가 Vive Tracker인지 확인
         if (other.CompareTag("ViveTracker"))
         {
-            Debug.Log("CompareTag");
+            if (this.CompareTag("transparentPunchWall"))
+            {
+                ArduinoManagerScript.TriggerWall();
+            }
 
-            // 색상 변경
-            cubeRenderer.material.color = Color.red;
+            else
+            {
+                // 색상 변경
+                cubeRenderer.material.color = Color.red;
+            }
         }
     }
 

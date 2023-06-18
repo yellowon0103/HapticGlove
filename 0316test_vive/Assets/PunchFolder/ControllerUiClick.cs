@@ -1,3 +1,4 @@
+
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -5,32 +6,38 @@ using System.Collections.Generic;
 
 public class ControllerUiClick : MonoBehaviour
 {
-    public Transform crosshair;
-    public GraphicRaycaster raycaster;
+    public GameObject PlusButton; // 클릭 처리할 버튼 오브젝트
+    public GameObject MinusButton; // 클릭 처리할 버튼 오브젝트
+
+    private bool buttonPressedPlus = false; // Plus 버튼이 눌렸는지 여부를 저장하는 변수
+    private bool buttonPressedMinus = false; // Minus 버튼이 눌렸는지 여부를 저장하는 변수
 
     void Update()
     {
-        ARAVRInput.DrawCrosshair(crosshair);
+        bool currentButtonStatePlus = ARAVRInput.Get(ARAVRInput.Button.One); // 현재 trigger 버튼 상태 가져오기
+        bool currentButtonStateMinus = ARAVRInput.Get(ARAVRInput.Button.Thumbstick); // 현재 ? 버튼 상태 가져오기
 
-        if (ARAVRInput.Get(ARAVRInput.Button.One))
+        if (!currentButtonStatePlus && buttonPressedPlus)
         {
-            Debug.Log("Trigger!");
+            Debug.Log("Plus Trigger!");
 
-            Ray ray = new Ray(ARAVRInput.LHandPosition, ARAVRInput.LHandDirection);
-            //RaycastHit hitInfo;
-
-            // GraphicRaycaster를 사용하여 UI 요소와 충돌 감지
-            PointerEventData pointerEventData = new PointerEventData(EventSystem.current);
-            pointerEventData.position = new Vector2(Screen.width / 2f, Screen.height / 2f); // 화면 중앙으로 설정
-            List<RaycastResult> results = new List<RaycastResult>();
-            raycaster.Raycast(pointerEventData, results);
-
-            if (results.Count > 0)
-            {
-                Debug.Log("Hit!");
-            }
+            // 버튼 오브젝트를 클릭 처리
+            ExecuteEvents.Execute(PlusButton, new PointerEventData(EventSystem.current), ExecuteEvents.pointerClickHandler);
         }
+
+        buttonPressedPlus = currentButtonStatePlus; // Minus 버튼 상태 업데이트
+
+        if (!currentButtonStateMinus && buttonPressedMinus)
+        {
+            Debug.Log("Minus Trigger!");
+
+            // 버튼 오브젝트를 클릭 처리
+            ExecuteEvents.Execute(MinusButton, new PointerEventData(EventSystem.current), ExecuteEvents.pointerClickHandler);
+        }
+
+        buttonPressedMinus = currentButtonStateMinus; // Minus 버튼 상태 업데이트
     }
+
 }
 
 
