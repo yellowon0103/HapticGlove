@@ -26,42 +26,33 @@ public class ArduinoManager : MonoBehaviour
         serial.Close();
     }
 
-    /*
-    public void Angle(float angle)
-    {
-        if (angle > 1)
-        {
-            Debug.Log(angle);
-            serial.Write(angle.ToString());
-        }
-    }
-    */
-
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKey(KeyCode.Alpha1))
         {
-            Debug.Log("Send one");
+            Debug.Log("Send 1 85\n");
             //아두이노한테 1을 보낸다.
             //Debug.Log(velocityScript.sendVelocity());
 
-            serial.Write("1");
+            serial.Write("1 85\n");
         }
         if (Input.GetKey(KeyCode.Alpha2))
         {
-            Debug.Log("Send two");
+            Debug.Log("Send 2 5");
             //아두이노한테 2을 보낸다.
-            serial.Write("2");
+            serial.Write("2 5\n");
         }
     }
 
     public void TriggerWall()
     {
         Debug.Log("Velocity PunchWallTrigger");
-        
-        Debug.Log(velocityScript.sendVelocity());
 
-        serial.Write("1");
+        Vector3 velocity = velocityScript.sendVelocity();
+        float speed = Mathf.Sqrt(velocity.x * velocity.x + velocity.y * velocity.y + velocity.z * velocity.z);
+        Debug.Log("Vector3 : " + velocity + " Velocity Speed: " + speed);
+
+        serial.Write("1 85\n");
     }
 }

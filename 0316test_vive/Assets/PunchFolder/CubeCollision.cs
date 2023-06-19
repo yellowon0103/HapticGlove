@@ -15,12 +15,12 @@ public class CubeCollision : MonoBehaviour
         cubeRenderer = GetComponent<Renderer>();
         originalColor = cubeRenderer.material.color;
 
-        Debug.Log("Start");
+        //Debug.Log("Start");
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("OnTriggerEnter");
+        //Debug.Log("OnTriggerEnter");
 
         // 충돌한 오브젝트가 Vive Tracker인지 확인
         if (other.CompareTag("ViveTracker"))
@@ -40,12 +40,12 @@ public class CubeCollision : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("OnTriggerExit");
+        //Debug.Log("OnTriggerExit");
 
         // 충돌이 끝난 경우, 원래 색상으로 복원
         if (other.CompareTag("ViveTracker"))
         {
-            Debug.Log("CompareTag");
+            //Debug.Log("CompareTag");
 
             cubeRenderer.material.color = originalColor;
         }

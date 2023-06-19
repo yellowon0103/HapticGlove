@@ -7,7 +7,7 @@ using TMPro;
 public class TextUpdate : MonoBehaviour
 {
     public TextMeshProUGUI ScriptText;
-    private string[] textArray = { "Hello", "Hi", "Good" };
+    private string[] textArray = { "1. vibration", "2. impact", "3. vibration & impact" };
     private int currentIndex = -1;
 
     // Start is called before the first frame update
