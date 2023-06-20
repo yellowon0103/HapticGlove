@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class BulletSpawner : MonoBehaviour
 {
-    public GameObject bulletPrefab; // 생성할 총알의 원본 프리팹
+    public GameObject bulletPrefabSlow; // 생성할 총알의 원본 프리팹
+    public GameObject bulletPrefabFast;
     //public float spawnRateMin = 0.5f; // 최소 생성 주기
     //public float spawnRateMax = 3f; // 최대 생성 주기
+
+    public TextUpdate TextUpdateScript;
+
 
     private Transform target; // 발사할 대상
     private float spawnRate; // 생성 주기
@@ -37,10 +41,49 @@ public class BulletSpawner : MonoBehaviour
 
             // bulletPrefab의 복제본을
             // transform.position 위치와 transform.rotation 회전으로 생성
-            GameObject bullet
-                = Instantiate(bulletPrefab, transform.position, transform.rotation);
+            GameObject bulletSlow
+                = Instantiate(bulletPrefabSlow, transform.position, transform.rotation);
             // 생성된 bullet 게임 오브젝트의 정면 방향이 target을 향하도록 회전
-            bullet.transform.LookAt(target);
+            bulletSlow.transform.LookAt(target);
+
+            // bulletPrefab의 복제본을
+            // transform.position 위치와 transform.rotation 회전으로 생성
+            GameObject bulletFast
+                = Instantiate(bulletPrefabFast, transform.position, transform.rotation);
+            // 생성된 bullet 게임 오브젝트의 정면 방향이 target을 향하도록 회전
+            bulletFast.transform.LookAt(target);
+
+            if (TextUpdateScript.currentIndex == 6 || TextUpdateScript.currentIndex == 10 || TextUpdateScript.currentIndex == 12 || TextUpdateScript.currentIndex == 17 || TextUpdateScript.currentIndex == 19 || TextUpdateScript.currentIndex == 21 || TextUpdateScript.currentIndex == 22 | TextUpdateScript.currentIndex == 28 || TextUpdateScript.currentIndex == 30 || TextUpdateScript.currentIndex == 31 || TextUpdateScript.currentIndex == 33) // slow
+            {
+                /*
+                // bulletPrefab의 복제본을
+                // transform.position 위치와 transform.rotation 회전으로 생성
+                GameObject bulletSlow
+                    = Instantiate(bulletPrefabSlow, transform.position, transform.rotation);
+                // 생성된 bullet 게임 오브젝트의 정면 방향이 target을 향하도록 회전
+                bulletSlow.transform.LookAt(target);
+                */
+                Destroy(bulletFast);
+            }
+
+            else if (TextUpdateScript.currentIndex == 7 || TextUpdateScript.currentIndex == 8 || TextUpdateScript.currentIndex == 9 || TextUpdateScript.currentIndex == 11 || TextUpdateScript.currentIndex == 18 || TextUpdateScript.currentIndex == 20 || TextUpdateScript.currentIndex == 23 || TextUpdateScript.currentIndex == 29 || TextUpdateScript.currentIndex == 32 || TextUpdateScript.currentIndex == 34) // fast
+            {
+                /*
+                // bulletPrefab의 복제본을
+                // transform.position 위치와 transform.rotation 회전으로 생성
+                GameObject bulletFast
+                    = Instantiate(bulletPrefabFast, transform.position, transform.rotation);
+                // 생성된 bullet 게임 오브젝트의 정면 방향이 target을 향하도록 회전
+                bulletFast.transform.LookAt(target);
+                */
+                Destroy(bulletSlow);
+            }
+
+            else
+            {
+                Destroy(bulletFast);
+                Destroy(bulletSlow);
+            }
 
             // 다음번 생성 간격을 spawnRateMin, spawnRateMax 사이에서 랜덤 지정
             //spawnRate = Random.Range(spawnRateMin, spawnRateMax);

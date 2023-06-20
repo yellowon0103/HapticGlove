@@ -61,6 +61,13 @@ public class ArduinoManager : MonoBehaviour
             CubeCollisionImpact.transparentPunchWallImpact.SetActive(true);
             CubeCollisionVibration.transparentPunchWallVibration.SetActive(true);
         }
+
+
+        if (Input.GetKey(KeyCode.Alpha3)) // 테스트
+        {
+            Debug.Log("1 75");
+            serialImpact.Write("1 75\n");
+        }
     }
 
     public void TriggerWall()
@@ -98,10 +105,12 @@ public class ArduinoManager : MonoBehaviour
         }
 
 
-        Debug.Log("Punch!");
+        Debug.Log("Punch!" + i);
 
         if (i == 2) // 진동
         {
+            Debug.Log("2 vibe");
+
             //진동 A만
             if (TextUpdateScript.currentIndex == 6 || TextUpdateScript.currentIndex == 10 || TextUpdateScript.currentIndex == 12 || TextUpdateScript.currentIndex == 28 || TextUpdateScript.currentIndex == 30 || TextUpdateScript.currentIndex == 31 || TextUpdateScript.currentIndex == 33)
             {
@@ -119,13 +128,14 @@ public class ArduinoManager : MonoBehaviour
 
         if (i == 1) // 임팩트
         {
+            Debug.Log("1 impact");
             // 임팩트 C만
             if (TextUpdateScript.currentIndex == 17 || TextUpdateScript.currentIndex == 19 || TextUpdateScript.currentIndex == 21 || TextUpdateScript.currentIndex == 22 || TextUpdateScript.currentIndex == 28 || TextUpdateScript.currentIndex == 30 || TextUpdateScript.currentIndex == 31 || TextUpdateScript.currentIndex == 33)
             {
                 //Debug.Log("Impact C! " + ArduinoSpeed);
                 serialImpact.Write("1 " + ArduinoSpeed + "\n");
 
-                //Debug.Log("1 " + ArduinoSpeed + "\n");
+                Debug.Log("1 " + ArduinoSpeed + "\n");
             }
             // 임팩트 D만
             if (TextUpdateScript.currentIndex == 18 || TextUpdateScript.currentIndex == 20 || TextUpdateScript.currentIndex == 23 || TextUpdateScript.currentIndex == 29 || TextUpdateScript.currentIndex == 32 || TextUpdateScript.currentIndex == 34)

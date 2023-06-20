@@ -23,45 +23,11 @@ public class Bullet : MonoBehaviour
         //Debug.Log("Bullet velocity" + bulletRigidbody.velocity);
 
         // 5초 뒤에 자신의 게임 오브젝트 파괴
-        //Destroy(gameObject, 5f);
+        Destroy(gameObject, 5f);
     }
 
     void Update()
     {
-        //진동 A만
-        if (TextUpdateScript.currentIndex == 6 || TextUpdateScript.currentIndex == 10 || TextUpdateScript.currentIndex == 12)
-        {
-            speed = 0.5f;
-        }
-        //진동 B만
-        if (TextUpdateScript.currentIndex == 7 || TextUpdateScript.currentIndex == 8 || TextUpdateScript.currentIndex == 9 || TextUpdateScript.currentIndex == 11)
-        {
-            speed = 2.5f;
-        }
-
-
-        // 임팩트 C만
-        if (TextUpdateScript.currentIndex == 17 || TextUpdateScript.currentIndex == 19 || TextUpdateScript.currentIndex == 21 || TextUpdateScript.currentIndex == 22)
-        {
-            speed = 0.5f;
-        }
-        // 임팩트 D만
-        if (TextUpdateScript.currentIndex == 18 || TextUpdateScript.currentIndex == 20 || TextUpdateScript.currentIndex == 23)
-        {
-            speed = 2.5f;
-        }
-
-
-        // 진동과 임팩트 E
-        if (TextUpdateScript.currentIndex == 28 || TextUpdateScript.currentIndex == 30 || TextUpdateScript.currentIndex == 31 || TextUpdateScript.currentIndex == 33)
-        {
-            speed = 0.5f;
-        }
-        // 진동과 임팩트 F
-        if (TextUpdateScript.currentIndex == 29 || TextUpdateScript.currentIndex == 32 || TextUpdateScript.currentIndex == 34)
-        {
-            speed = 2.5f;
-        }
 
     }
 

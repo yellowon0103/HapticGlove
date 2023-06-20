@@ -29,9 +29,9 @@ public class CubeCollision : MonoBehaviour
         //Debug.Log("Start");
 
         // CubeCollisionImpact 오브젝트의 Transform 컴포넌트 가져오기
-        Transform impactTransform = CubeCollisionImpact.transform;
+        impactTransform = CubeCollisionImpact.transform;
         // 현재 위치 정보 가져오기
-        Vector3 currentPosition = impactTransform.position;
+        currentPosition = impactTransform.position;
     }
 
 
