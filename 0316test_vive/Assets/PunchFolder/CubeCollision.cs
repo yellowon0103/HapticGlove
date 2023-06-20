@@ -27,7 +27,8 @@ public class CubeCollision : MonoBehaviour
         {
             if (this.CompareTag("transparentPunchWall"))
             {
-                ArduinoManagerScript.TriggerWall();
+                //ArduinoManagerScript.TriggerWall();
+                ArduinoManagerScript.Punch();
             }
 
             else

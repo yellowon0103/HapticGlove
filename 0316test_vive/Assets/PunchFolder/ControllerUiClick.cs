@@ -15,7 +15,7 @@ public class ControllerUiClick : MonoBehaviour
     void Update()
     {
         bool currentButtonStatePlus = ARAVRInput.Get(ARAVRInput.Button.One); // 현재 trigger 버튼 상태 가져오기
-        bool currentButtonStateMinus = ARAVRInput.Get(ARAVRInput.Button.Thumbstick); // 현재 ? 버튼 상태 가져오기
+        bool currentButtonStateMinus = ARAVRInput.Get(ARAVRInput.Button.Thumbstick); // 현재 패드 버튼 상태 가져오기
 
         if (!currentButtonStatePlus && buttonPressedPlus)
         {
