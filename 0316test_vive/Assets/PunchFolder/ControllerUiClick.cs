@@ -12,6 +12,9 @@ public class ControllerUiClick : MonoBehaviour
     private bool buttonPressedPlus = false; // Plus 버튼이 눌렸는지 여부를 저장하는 변수
     private bool buttonPressedMinus = false; // Minus 버튼이 눌렸는지 여부를 저장하는 변수
 
+    public CubeCollision CubeCollisionImpact;
+    public CubeCollision CubeCollisionVibration;
+
     void Update()
     {
         bool currentButtonStatePlus = ARAVRInput.Get(ARAVRInput.Button.One); // 현재 trigger 버튼 상태 가져오기
@@ -20,6 +23,9 @@ public class ControllerUiClick : MonoBehaviour
         if (!currentButtonStatePlus && buttonPressedPlus)
         {
             Debug.Log("Plus Trigger!");
+
+            CubeCollisionImpact.transparentPunchWallImpact.SetActive(true);
+            CubeCollisionVibration.transparentPunchWallVibration.SetActive(true);
 
             // 버튼 오브젝트를 클릭 처리
             ExecuteEvents.Execute(PlusButton, new PointerEventData(EventSystem.current), ExecuteEvents.pointerClickHandler);
@@ -30,6 +36,9 @@ public class ControllerUiClick : MonoBehaviour
         if (!currentButtonStateMinus && buttonPressedMinus)
         {
             Debug.Log("Minus Trigger!");
+
+            CubeCollisionImpact.transparentPunchWallImpact.SetActive(true);
+            CubeCollisionVibration.transparentPunchWallVibration.SetActive(true);
 
             // 버튼 오브젝트를 클릭 처리
             ExecuteEvents.Execute(MinusButton, new PointerEventData(EventSystem.current), ExecuteEvents.pointerClickHandler);
