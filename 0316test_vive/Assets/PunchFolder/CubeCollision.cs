@@ -14,6 +14,11 @@ public class CubeCollision : MonoBehaviour
 
     public TextUpdate TextUpdateScript;
 
+    public Transform impactTransform;
+    public Vector3 currentPosition;
+
+    public CubeCollision CubeCollisionImpact;
+
     private void Start()
     {
         // 초기 색상 저장
@@ -22,6 +27,11 @@ public class CubeCollision : MonoBehaviour
         GameObject transparentPunchWallImpact = GameObject.FindGameObjectWithTag("transparentPunchWall");
         GameObject transparentPunchWallVibration = GameObject.FindGameObjectWithTag("VibrationTransparentPunchWall");
         //Debug.Log("Start");
+
+        // CubeCollisionImpact 오브젝트의 Transform 컴포넌트 가져오기
+        Transform impactTransform = CubeCollisionImpact.transform;
+        // 현재 위치 정보 가져오기
+        Vector3 currentPosition = impactTransform.position;
     }
 
 
@@ -40,6 +50,25 @@ public class CubeCollision : MonoBehaviour
         {
             transparentPunchWallVibration.SetActive(false);
         }
+
+
+
+
+        // 임팩트 C만
+        if (TextUpdateScript.currentIndex == 17 || TextUpdateScript.currentIndex == 19 || TextUpdateScript.currentIndex == 21 || TextUpdateScript.currentIndex == 22 || TextUpdateScript.currentIndex == 28 || TextUpdateScript.currentIndex == 30 || TextUpdateScript.currentIndex == 31 || TextUpdateScript.currentIndex == 33)
+        {
+            currentPosition.x = 0.122f;
+            impactTransform.position = currentPosition;
+            //Debug.Log(impactTransform.position);
+        }
+        // 임팩트 D만
+        if (TextUpdateScript.currentIndex == 18 || TextUpdateScript.currentIndex == 20 || TextUpdateScript.currentIndex == 23 || TextUpdateScript.currentIndex == 29 || TextUpdateScript.currentIndex == 32 || TextUpdateScript.currentIndex == 34)
+        {
+            currentPosition.x = 0.1f;
+            impactTransform.position = currentPosition;
+            //Debug.Log(impactTransform.position);
+        }
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -68,20 +97,30 @@ public class CubeCollision : MonoBehaviour
             else
             {
                 Debug.Log("else");
-                if (transparentPunchWallImpact.activeSelf)
+                if (transparentPunchWallImpact.activeSelf && (!transparentPunchWallVibration.activeSelf))
                 {
                     Debug.Log("transparentPunchWallImpact.activeSelf");
                     // 색상 변경
                     cubeRenderer.material.color = Color.red;
                     transparentPunchWallImpact.SetActive(false);
                 }
-                else if (transparentPunchWallVibration.activeSelf)
+                else if (transparentPunchWallVibration.activeSelf && (!transparentPunchWallImpact.activeSelf))
                 {
                     Debug.Log("transparentPunchWallVibration.activeSelf");
                     // 색상 변경
                     cubeRenderer.material.color = Color.red;
                     transparentPunchWallVibration.SetActive(false);
                 }
+
+                else if (transparentPunchWallImpact.activeSelf && transparentPunchWallVibration.activeSelf)
+                {
+                    Debug.Log("Both");
+                    cubeRenderer.material.color = Color.red;
+                    transparentPunchWallVibration.SetActive(false);
+                    transparentPunchWallImpact.SetActive(false);
+
+                }
+
                 else
                 {
                     Debug.Log("else else");

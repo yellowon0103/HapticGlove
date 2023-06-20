@@ -33,6 +33,8 @@ public class ArduinoManager : MonoBehaviour
         {
             Debug.Log("serialImpact Open");
         }
+
+
     }
 
     void OnDestroy()
