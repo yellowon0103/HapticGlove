@@ -133,8 +133,8 @@ public class ArduinoManager : MonoBehaviour
             }
         }
 
-        CubeCollisionImpact.transparentPunchWallImpact.SetActive(false);
-        CubeCollisionVibration.transparentPunchWallVibration.SetActive(false);
+       // CubeCollisionImpact.transparentPunchWallImpact.SetActive(false);
+       // CubeCollisionVibration.transparentPunchWallVibration.SetActive(false);
 
         /*
         // 진동과 임팩트 E
