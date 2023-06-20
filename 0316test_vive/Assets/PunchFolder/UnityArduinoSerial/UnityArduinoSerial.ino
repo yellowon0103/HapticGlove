@@ -11,10 +11,10 @@ void loop() {
     String data = Serial.readStringUntil('\n'); // 개행 문자를 구분자로 문자열 입력 받음
     data.trim(); // 문자열 앞뒤 공백 제거
 
-    if (data == "1 85") {
+    if (data == "C") {
       digitalWrite(LED_BUILTIN, HIGH); // LED를 켬
     } 
-    else if (data == "2 5") {
+    else if (data == "D") {
       digitalWrite(LED_BUILTIN, LOW); // LED를 끔
     }
   }

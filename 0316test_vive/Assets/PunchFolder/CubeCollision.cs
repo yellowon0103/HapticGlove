@@ -33,6 +33,7 @@ public class CubeCollision : MonoBehaviour
 
             else
             {
+                
                 // 색상 변경
                 cubeRenderer.material.color = Color.red;
             }

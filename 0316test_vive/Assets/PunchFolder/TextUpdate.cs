@@ -15,37 +15,48 @@ public class TextUpdate : MonoBehaviour
 
         "Mode 0. Punch Simulation", // 1
         "Punch toward the white wall in front of you.\nFollow the speed of the fist shown on the right.\nWhen a fist collides with a wall, the wall turns red.\nThen, hold for 5 seconds with your arms outstretched.",
-        "Test the Punch\nIf you've tested enough, hit the Trigger button to move on.", // 3 
+        "# Test the Punch\nIf you've tested enough, hit the Trigger button to move on.", // 3 
+
 
         "Mode 1. Vibration", // 4
         "In this experiment, if a fist collides with a wall, it will cause a vibration.",
-        "Punch toward the white wall.", // 6 Go
-        "Try again.\nPunch toward the white wall.", // 7 Go
-        "A. Did you feel the vibration in your hand?\nYes or No",
+        "# A\nPunch toward the white wall.", // 6 Go -- A
+        "# B\nPunch toward the white wall.", // 7 Go -- B
+        "# Trial 1\nPunch toward the white wall.\nIs it A or B?", // 8 Go -- B
+        "# Trial 2\nPunch toward the white wall.\nIs it A or B?", // 9 Go -- B
+        "# Trial 3\nPunch toward the white wall.\nIs it A or B?", // 10 Go -- A
+        "# Trial 4\nPunch toward the white wall.\nIs it A or B?", // 11 Go -- B
+        "# Trial 5\nPunch toward the white wall.\nIs it A or B?", // 12 Go -- A
+        "1. How realistic did it feel?\n\n1 Not very realistic\n2 Not realistic\n3 Moderate\n4 Realistic\n5 Very realistic",
+        "2. How fake did it feel?\n\n1 Not very fake\n2 Not fake\n3 Moderate\n4 fake\n5 Very fake",
 
-        "Mode 2. Impact", // 9
+
+        "Mode 2. Impact", // 15
         "In this experiment, the force of the collision will vary depending on how hard your fist collides with the wall.",
-        "You will be asked to rate intensity from 0 to 10.",
-        "Follow the speed of the fist shown on the right.\nThe speed is random.",
-        "For example, right now it's an impact of 5 out of 10.\nPunch toward the white wall.", // 13 Go
-        "Try again.\nImpact of 5 out of 10.\nPunch toward the white wall.",
+        "# C\nPunch toward the white wall.", // 17 Go -- C
+        "# D\nPunch toward the white wall.", // 18 Go -- D
+        "# Trial 1\nPunch toward the white wall.\nIs it C or D?", // 19 Go -- C
+        "# Trial 2\nPunch toward the white wall.\nIs it C or D?", // 20 Go -- D
+        "# Trial 3\nPunch toward the white wall.\nIs it C or D?", // 21 Go -- C
+        "# Trial 4\nPunch toward the white wall.\nIs it C or D?", // 22 Go -- C
+        "# Trial 5\nPunch toward the white wall.\nIs it C or D?", // 23 Go -- D
+        "1. How realistic did it feel?\n\n1 Not very realistic\n2 Not realistic\n3 Moderate\n4 Realistic\n5 Very realistic",
+        "2. How fake did it feel?\n\n1 Not very fake\n2 Not fake\n3 Moderate\n4 fake\n5 Very fake",
 
-        "Now let's start the experiment.", // 15
-        "Punch toward the white wall.\nThen, hold for 5 seconds with your arms outstretched.",
-        "Try again.\nPunch toward the white wall.\nThen, hold for 5 seconds with your arms outstretched.",
-        "B. How strong is the impact?\nFrom 0 to 10.",
 
-
-        "Mode 3. Vibration & Impact", // 19
+        "Mode 3. Vibration & Impact", // 26
         "In this experiment, both vibration and impact will be felt when the fist collides with the wall.",
-        "You will be asked if you felt the vibration and how strong the impact was from 0 to 10.",
+        "# E\nPunch toward the white wall.", // 28 Go -- E
+        "# F\nPunch toward the white wall.", // 29 Go -- F
+        "# Trial 1\nPunch toward the white wall.\nIs it E or F?", // 30 Go -- E
+        "# Trial 2\nPunch toward the white wall.\nIs it E or F?", // 31 Go -- E
+        "# Trial 3\nPunch toward the white wall.\nIs it E or F?", // 32 Go -- F
+        "# Trial 4\nPunch toward the white wall.\nIs it E or F?", // 33 Go -- E 
+        "# Trial 5\nPunch toward the white wall.\nIs it E or F?", // 34 Go -- F
+        "1. How realistic did it feel?\n\n1 Not very realistic\n2 Not realistic\n3 Moderate\n4 Realistic\n5 Very realistic",
+        "2. How fake did it feel?\n\n1 Not very fake\n2 Not fake\n3 Moderate\n4 fake\n5 Very fake",
 
-        "Now let's start the experiment.", // 22
-        "Punch toward the white wall.\nThen, hold for 5 seconds with your arms outstretched.", // 23 Go
-        "Try again.\nPunch toward the white wall.\nThen, hold for 5 seconds with your arms outstretched.",
-        "C. Did you feel the vibration in your hand?\nYes or No\nD. How strong is the impact?\nFrom 0 to 10.",
-
-        "The experiment is finished.\nThank you." // 26
+        "The experiment is finished.\nThank you." // 27
     };
 
     public int currentIndex = -1;
