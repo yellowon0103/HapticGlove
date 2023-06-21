@@ -53,7 +53,7 @@ public class BulletSpawner : MonoBehaviour
             // 생성된 bullet 게임 오브젝트의 정면 방향이 target을 향하도록 회전
             bulletFast.transform.LookAt(target);
 
-            if (TextUpdateScript.currentIndex == 6 || TextUpdateScript.currentIndex == 10 || TextUpdateScript.currentIndex == 12 || TextUpdateScript.currentIndex == 17 || TextUpdateScript.currentIndex == 19 || TextUpdateScript.currentIndex == 21 || TextUpdateScript.currentIndex == 22 | TextUpdateScript.currentIndex == 28 || TextUpdateScript.currentIndex == 30 || TextUpdateScript.currentIndex == 31 || TextUpdateScript.currentIndex == 33) // slow
+            if (TextUpdateScript.currentIndex == 6 || TextUpdateScript.currentIndex == 8 || TextUpdateScript.currentIndex == 10 || TextUpdateScript.currentIndex == 14 || TextUpdateScript.currentIndex == 16 || TextUpdateScript.currentIndex == 18 || TextUpdateScript.currentIndex == 22 | TextUpdateScript.currentIndex == 24 || TextUpdateScript.currentIndex == 26) // slow
             {
                 /*
                 // bulletPrefab의 복제본을
@@ -66,7 +66,7 @@ public class BulletSpawner : MonoBehaviour
                 Destroy(bulletFast);
             }
 
-            else if (TextUpdateScript.currentIndex == 7 || TextUpdateScript.currentIndex == 8 || TextUpdateScript.currentIndex == 9 || TextUpdateScript.currentIndex == 11 || TextUpdateScript.currentIndex == 18 || TextUpdateScript.currentIndex == 20 || TextUpdateScript.currentIndex == 23 || TextUpdateScript.currentIndex == 29 || TextUpdateScript.currentIndex == 32 || TextUpdateScript.currentIndex == 34) // fast
+            else if (TextUpdateScript.currentIndex == 7 || TextUpdateScript.currentIndex == 9 || TextUpdateScript.currentIndex == 11 || TextUpdateScript.currentIndex == 15 || TextUpdateScript.currentIndex == 17 || TextUpdateScript.currentIndex == 19 || TextUpdateScript.currentIndex == 23 || TextUpdateScript.currentIndex == 25 || TextUpdateScript.currentIndex == 27) // fast
             {
                 /*
                 // bulletPrefab의 복제본을

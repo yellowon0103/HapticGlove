@@ -68,15 +68,18 @@ public class ArduinoManager : MonoBehaviour
             Debug.Log("1 75");
             serialImpact.Write("1 75\n");
         }
+
+
+
     }
 
     public void TriggerWall()
     {
-        Debug.Log("Velocity PunchWallTrigger");
+        //Debug.Log("Velocity PunchWallTrigger");
 
         Vector3 velocity = velocityScript.sendVelocity();
         float speed = Mathf.Sqrt(velocity.x * velocity.x + velocity.y * velocity.y + velocity.z * velocity.z);
-        Debug.Log("Vector3 : " + velocity + " Velocity Speed: " + speed);
+        //Debug.Log("Vector3 : " + velocity + " Velocity Speed: " + speed);
 
     }
 
@@ -105,41 +108,42 @@ public class ArduinoManager : MonoBehaviour
         }
 
 
-        Debug.Log("Punch!" + i);
+        //Debug.Log("Punch!" + i);
 
         if (i == 2) // 진동
         {
-            Debug.Log("2 vibe");
+            //Debug.Log("2 vibe");
 
             //진동 A만
-            if (TextUpdateScript.currentIndex == 6 || TextUpdateScript.currentIndex == 10 || TextUpdateScript.currentIndex == 12 || TextUpdateScript.currentIndex == 28 || TextUpdateScript.currentIndex == 30 || TextUpdateScript.currentIndex == 31 || TextUpdateScript.currentIndex == 33)
+            if (TextUpdateScript.currentIndex == 6 || TextUpdateScript.currentIndex == 8 || TextUpdateScript.currentIndex == 10 || TextUpdateScript.currentIndex == 22 || TextUpdateScript.currentIndex == 24 || TextUpdateScript.currentIndex == 26)
             {
-                //Debug.Log("Vibe A!" + ArduinoSpeed);
+                Debug.Log("진동 1번 Index : " + TextUpdateScript.currentIndex + ", Speed : " + ArduinoSpeed);
                 //Debug.Log("Debug");
                 serialVibe.Write("1\n"); // 진동 신호 보내기
             }
             //진동 B만
-            if (TextUpdateScript.currentIndex == 7 || TextUpdateScript.currentIndex == 8 || TextUpdateScript.currentIndex == 9 || TextUpdateScript.currentIndex == 11 || TextUpdateScript.currentIndex == 29 || TextUpdateScript.currentIndex == 32 || TextUpdateScript.currentIndex == 34)
+            if (TextUpdateScript.currentIndex == 7 || TextUpdateScript.currentIndex == 9 || TextUpdateScript.currentIndex == 11 || TextUpdateScript.currentIndex == 23 || TextUpdateScript.currentIndex == 25 || TextUpdateScript.currentIndex == 27)
             {
-                //Debug.Log("Vibe B!" + ArduinoSpeed);
+                Debug.Log("진동 2번 Index : " + TextUpdateScript.currentIndex + ", Speed : " + ArduinoSpeed);
                 serialVibe.Write("2\n"); // 진동 신호 보내기
             }
         }
 
         if (i == 1) // 임팩트
         {
-            Debug.Log("1 impact");
+            //Debug.Log("1 impact");
             // 임팩트 C만
-            if (TextUpdateScript.currentIndex == 17 || TextUpdateScript.currentIndex == 19 || TextUpdateScript.currentIndex == 21 || TextUpdateScript.currentIndex == 22 || TextUpdateScript.currentIndex == 28 || TextUpdateScript.currentIndex == 30 || TextUpdateScript.currentIndex == 31 || TextUpdateScript.currentIndex == 33)
+            if (TextUpdateScript.currentIndex == 14 || TextUpdateScript.currentIndex == 16 || TextUpdateScript.currentIndex == 18 || TextUpdateScript.currentIndex == 22 || TextUpdateScript.currentIndex == 24 || TextUpdateScript.currentIndex == 26)
             {
-                //Debug.Log("Impact C! " + ArduinoSpeed);
+                Debug.Log("임팩트 1번 Index : " + TextUpdateScript.currentIndex + ", Speed : " + ArduinoSpeed);
                 serialImpact.Write("1 " + ArduinoSpeed + "\n");
 
-                Debug.Log("1 " + ArduinoSpeed + "\n");
+                //Debug.Log("1 " + ArduinoSpeed + "\n");
             }
             // 임팩트 D만
-            if (TextUpdateScript.currentIndex == 18 || TextUpdateScript.currentIndex == 20 || TextUpdateScript.currentIndex == 23 || TextUpdateScript.currentIndex == 29 || TextUpdateScript.currentIndex == 32 || TextUpdateScript.currentIndex == 34)
+            if (TextUpdateScript.currentIndex == 15 || TextUpdateScript.currentIndex == 17 || TextUpdateScript.currentIndex == 19 || TextUpdateScript.currentIndex == 23 || TextUpdateScript.currentIndex == 25 || TextUpdateScript.currentIndex == 27)
             {
+                Debug.Log("임팩트 2번 Index : " + TextUpdateScript.currentIndex + ", Speed : " + ArduinoSpeed);
                 //Debug.Log("Impact D! " + ArduinoSpeed);
                 serialImpact.Write("2 " + ArduinoSpeed + "\n");
             }

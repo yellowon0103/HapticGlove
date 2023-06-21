@@ -22,7 +22,7 @@ public class ControllerUiClick : MonoBehaviour
 
         if (!currentButtonStatePlus && buttonPressedPlus)
         {
-            Debug.Log("Plus Trigger!");
+            //Debug.Log("Plus Trigger!");
 
             CubeCollisionImpact.transparentPunchWallImpact.SetActive(true);
             CubeCollisionVibration.transparentPunchWallVibration.SetActive(true);
@@ -35,7 +35,7 @@ public class ControllerUiClick : MonoBehaviour
 
         if (!currentButtonStateMinus && buttonPressedMinus)
         {
-            Debug.Log("Minus Trigger!");
+            //Debug.Log("Minus Trigger!");
 
             CubeCollisionImpact.transparentPunchWallImpact.SetActive(true);
             CubeCollisionVibration.transparentPunchWallVibration.SetActive(true);

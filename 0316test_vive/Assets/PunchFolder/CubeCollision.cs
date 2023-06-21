@@ -39,14 +39,14 @@ public class CubeCollision : MonoBehaviour
     {
         if (TextUpdateScript.currentIndex == 6 ||
                 TextUpdateScript.currentIndex == 7 || TextUpdateScript.currentIndex == 8 || TextUpdateScript.currentIndex == 9 || TextUpdateScript.currentIndex == 10 ||
-                TextUpdateScript.currentIndex == 11 || TextUpdateScript.currentIndex == 12)
+                TextUpdateScript.currentIndex == 11)
         {
             transparentPunchWallImpact.SetActive(false);
         }
 
-        if (TextUpdateScript.currentIndex == 17 ||
-                TextUpdateScript.currentIndex == 18 || TextUpdateScript.currentIndex == 19 || TextUpdateScript.currentIndex == 20 || TextUpdateScript.currentIndex == 21 ||
-                TextUpdateScript.currentIndex == 22 || TextUpdateScript.currentIndex == 23)
+        if (TextUpdateScript.currentIndex == 14 ||
+                TextUpdateScript.currentIndex == 15 || TextUpdateScript.currentIndex == 16 || TextUpdateScript.currentIndex == 17 || TextUpdateScript.currentIndex == 18 ||
+                TextUpdateScript.currentIndex == 19)
         {
             transparentPunchWallVibration.SetActive(false);
         }
@@ -55,14 +55,14 @@ public class CubeCollision : MonoBehaviour
 
 
         // 임팩트 C만
-        if (TextUpdateScript.currentIndex == 17 || TextUpdateScript.currentIndex == 19 || TextUpdateScript.currentIndex == 21 || TextUpdateScript.currentIndex == 22 || TextUpdateScript.currentIndex == 28 || TextUpdateScript.currentIndex == 30 || TextUpdateScript.currentIndex == 31 || TextUpdateScript.currentIndex == 33)
+        if (TextUpdateScript.currentIndex == 14 || TextUpdateScript.currentIndex == 16 || TextUpdateScript.currentIndex == 18 || TextUpdateScript.currentIndex == 22 || TextUpdateScript.currentIndex == 24 || TextUpdateScript.currentIndex == 26)
         {
             currentPosition.x = 0.122f;
             impactTransform.position = currentPosition;
             //Debug.Log(impactTransform.position);
         }
         // 임팩트 D만
-        if (TextUpdateScript.currentIndex == 18 || TextUpdateScript.currentIndex == 20 || TextUpdateScript.currentIndex == 23 || TextUpdateScript.currentIndex == 29 || TextUpdateScript.currentIndex == 32 || TextUpdateScript.currentIndex == 34)
+        if (TextUpdateScript.currentIndex == 15 || TextUpdateScript.currentIndex == 17 || TextUpdateScript.currentIndex == 19 || TextUpdateScript.currentIndex == 23 || TextUpdateScript.currentIndex == 25 || TextUpdateScript.currentIndex == 27)
         {
             currentPosition.x = 0.1f;
             impactTransform.position = currentPosition;
@@ -82,31 +82,31 @@ public class CubeCollision : MonoBehaviour
         {
             if (this.CompareTag("transparentPunchWall"))
             {
-                Debug.Log("transparentPunchWall");
+                //Debug.Log("transparentPunchWall");
                 //ArduinoManagerScript.TriggerWall();
                 ArduinoManagerScript.Punch(1);
             }
 
             else if (this.CompareTag("VibrationTransparentPunchWall"))
             {
-                Debug.Log("VibrationTransparentPunchWall");
+                //Debug.Log("VibrationTransparentPunchWall");
                 //ArduinoManagerScript.TriggerWall();
                 ArduinoManagerScript.Punch(2);
             }
 
             else
             {
-                Debug.Log("else");
+                //Debug.Log("else");
                 if (transparentPunchWallImpact.activeSelf && (!transparentPunchWallVibration.activeSelf))
                 {
-                    Debug.Log("transparentPunchWallImpact.activeSelf");
+                    //Debug.Log("transparentPunchWallImpact.activeSelf");
                     // 색상 변경
                     cubeRenderer.material.color = Color.red;
                     transparentPunchWallImpact.SetActive(false);
                 }
                 else if (transparentPunchWallVibration.activeSelf && (!transparentPunchWallImpact.activeSelf))
                 {
-                    Debug.Log("transparentPunchWallVibration.activeSelf");
+                    //Debug.Log("transparentPunchWallVibration.activeSelf");
                     // 색상 변경
                     cubeRenderer.material.color = Color.red;
                     transparentPunchWallVibration.SetActive(false);
@@ -114,7 +114,7 @@ public class CubeCollision : MonoBehaviour
 
                 else if (transparentPunchWallImpact.activeSelf && transparentPunchWallVibration.activeSelf)
                 {
-                    Debug.Log("Both");
+                    //Debug.Log("Both");
                     cubeRenderer.material.color = Color.red;
                     transparentPunchWallVibration.SetActive(false);
                     transparentPunchWallImpact.SetActive(false);
@@ -123,7 +123,7 @@ public class CubeCollision : MonoBehaviour
 
                 else
                 {
-                    Debug.Log("else else");
+                    //Debug.Log("else else");
                     cubeRenderer.material.color = Color.blue;
                 }
             }

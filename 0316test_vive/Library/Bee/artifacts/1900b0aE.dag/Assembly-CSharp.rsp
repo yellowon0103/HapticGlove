@@ -392,6 +392,7 @@
 "Assets/PunchFolder/ArduinoManager.cs"
 "Assets/PunchFolder/Bullet.cs"
 "Assets/PunchFolder/BulletSpawner.cs"
+"Assets/PunchFolder/CameraFollowingCanvas.cs"
 "Assets/PunchFolder/ControllerUiClick.cs"
 "Assets/PunchFolder/CubeCollision.cs"
 "Assets/PunchFolder/PositionRestriction.cs"
