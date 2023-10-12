@@ -11,6 +11,7 @@ TagManager:
   - transparentPunchWall
   - TextUpdate
   - VibrationTransparentPunchWall
+  - Ground
   layers:
   - Default
   - TransparentFX
